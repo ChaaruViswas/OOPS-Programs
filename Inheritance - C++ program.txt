@@ -1,0 +1,59 @@
+//Inheritance - C++ program
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Student
+{
+    protected:
+        string name;
+        int age;
+    
+    public:
+        void setName(const string& studentName)
+        {
+            name=studentName;
+        }
+    
+        void setAge(int studentAge)
+        {
+            age=studentAge;
+        }
+    
+        void displayDetails()
+        {
+            cout<<"Name: "<<name<<"\n";
+            cout<<"Age: "<<age<<"\n";
+        }
+};
+
+class UndergraduateStudent: public Student
+{
+    private:
+        int semester;
+    
+    public:
+        void setSemester(int studentSemester)
+        {
+            semester=studentSemester;
+        }
+    
+        void displayDetails()
+        {
+            cout<<"Name: "<< name<<"\n";
+            cout<<"Age: "<< age<<"\n";
+            cout<<"Semester: "<<semester<<"\n";
+        }
+};
+
+int main()
+{
+    UndergraduateStudent undergrad;
+    undergrad.setName("Chaaru Viswas");
+    undergrad.setAge(20);
+    undergrad.setSemester(6);
+    cout<<"Student Details: "<<"\n";
+    undergrad.displayDetails();
+    return 0;
+}

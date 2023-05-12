@@ -1,0 +1,41 @@
+//Abstraction - C++ program
+
+#include <iostream>
+using namespace std;
+
+class Shape
+{
+    public:
+        virtual void draw()=0;
+};
+
+class Circle: public Shape
+{
+    public:
+        void draw()
+        {
+            cout<<"Circle"<<"\n";
+        }
+};
+
+class Rectangle: public Shape
+{
+    public:
+        void draw()
+        {
+            cout<<"Rectangle"<<"\n";
+        }
+};
+
+int main()
+{
+    Shape* shape1;
+    Shape* shape2;
+    Circle circle;
+    Rectangle rectangle;
+    shape1= &circle;
+    shape1->draw();
+    shape2= &rectangle;
+    shape2->draw();
+    return 0;
+}

@@ -1,0 +1,43 @@
+//Polymorphism - C++ program
+
+#include <iostream>
+using namespace std;
+
+class Shape
+{
+    public:
+        virtual void draw()
+        {
+            cout<<"Shape"<<"\n";
+        }
+};
+
+class Circle: public Shape
+{
+    public:
+        void draw() override
+        {
+            cout<<"Circle"<<"\n";
+        }
+};
+
+class Square: public Shape
+{
+    public:
+        void draw() override
+        {
+            cout<<"Square"<<"\n";
+        }
+};
+
+int main()
+{
+    Shape* shapePtr;
+    Circle circle;
+    Square square;
+    shapePtr= &circle;
+    shapePtr->draw();
+    shapePtr= &square;
+    shapePtr->draw();
+    return 0;
+}
